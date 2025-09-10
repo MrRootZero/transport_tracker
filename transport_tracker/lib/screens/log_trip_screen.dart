@@ -79,13 +79,14 @@ class _LogTripScreenState extends ConsumerState<LogTripScreen> {
             label: const Text('Log Selected Trip'),
             onPressed: () async {
               if (_selectedPassengerId == null) return;
+              final messenger = ScaffoldMessenger.of(context);
               await ref.read(tripsProvider.notifier).logTrip(
                     passengerId: _selectedPassengerId!,
                     date: _date,
                     session: _session,
                   );
               if (mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
+                messenger.showSnackBar(
                   const SnackBar(content: Text('Trip logged')),
                 );
               }
@@ -102,12 +103,13 @@ class _LogTripScreenState extends ConsumerState<LogTripScreen> {
                   label: const Text('Log BOTH (today)'),
                   onPressed: () async {
                     if (_selectedPassengerId == null) return;
+                    final messenger = ScaffoldMessenger.of(context);
                     await ref.read(tripsProvider.notifier).logBoth(
                           passengerId: _selectedPassengerId!,
                           date: DateTime.now(),
                         );
                     if (mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
+                      messenger.showSnackBar(
                         const SnackBar(content: Text('Both sessions logged')),
                       );
                     }
@@ -121,10 +123,11 @@ class _LogTripScreenState extends ConsumerState<LogTripScreen> {
                   label: Text(_listening ? 'Listening…' : 'Voice Log'),
                   onPressed: () async {
                     setState(() => _listening = true);
+                    final messenger = ScaffoldMessenger.of(context);
                     final available = await _voice.isAvailable();
                     if (!available) {
                       if (!mounted) return;
-                      ScaffoldMessenger.of(context).showSnackBar(
+                      messenger.showSnackBar(
                         const SnackBar(content: Text('Speech not available')),
                       );
                       setState(() => _listening = false);
@@ -177,7 +180,7 @@ class _LogTripScreenState extends ConsumerState<LogTripScreen> {
                     }
 
                     if (!mounted) return;
-                    ScaffoldMessenger.of(context).showSnackBar(
+                    messenger.showSnackBar(
                       SnackBar(
                           content: Text('Logged for ${match.name}: "$spoken"')),
                     );

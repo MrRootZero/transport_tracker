@@ -44,8 +44,10 @@ class VoiceService {
       },
       listenFor: const Duration(seconds: 5),
       pauseFor: const Duration(seconds: 2),
-      partialResults: true,
       localeId: 'en_ZA',
+      listenOptions: stt.SpeechListenOptions(
+        partialResults: true,
+      ),
     );
 
     return completer.future;

@@ -19,7 +19,7 @@ class ReportScreen extends ConsumerStatefulWidget {
 
 class _ReportScreenState extends ConsumerState<ReportScreen> {
   ReportRange _range = ReportRange.week;
-  DateTime _anchor = DateTime.now();
+  final DateTime _anchor = DateTime.now();
 
   @override
   Widget build(BuildContext context) {

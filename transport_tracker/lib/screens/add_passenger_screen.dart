@@ -50,7 +50,8 @@ class _AddPassengerScreenState extends ConsumerState<AddPassengerScreen> {
             TextFormField(
               controller: _name,
               decoration: const InputDecoration(labelText: 'Name'),
-              validator: (v) => (v == null || v.trim().isEmpty) ? 'Required' : null,
+              validator: (v) =>
+                  (v == null || v.trim().isEmpty) ? 'Required' : null,
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<PlanType>(
@@ -96,6 +97,9 @@ class _AddPassengerScreenState extends ConsumerState<AddPassengerScreen> {
                 final monthly = double.tryParse(_monthlyCtrl.text.trim());
                 final perTrip = double.tryParse(_perTripCtrl.text.trim());
 
+                // Capture the context before async operations
+                final navigator = Navigator.of(context);
+
                 if (isEdit) {
                   final p = widget.editing!;
                   final updated = Passenger(
@@ -107,7 +111,9 @@ class _AddPassengerScreenState extends ConsumerState<AddPassengerScreen> {
                     active: p.active,
                     createdAt: p.createdAt,
                   );
-                  await ref.read(passengersProvider.notifier).updatePassenger(updated);
+                  await ref
+                      .read(passengersProvider.notifier)
+                      .updatePassenger(updated);
                 } else {
                   await ref.read(passengersProvider.notifier).addPassenger(
                         name: _name.text.trim(),
@@ -116,7 +122,7 @@ class _AddPassengerScreenState extends ConsumerState<AddPassengerScreen> {
                         perTripRate: perTrip,
                       );
                 }
-                if (mounted) Navigator.pop(context);
+                if (mounted) navigator.pop();
               },
             ),
           ],

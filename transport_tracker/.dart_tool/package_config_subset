@@ -34,6 +34,10 @@ fixnum
 3.1
 file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/fixnum-1.1.1/
 file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/fixnum-1.1.1/lib/
+flutter_lints
+3.1
+file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0/
+file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0/lib/
 flutter_riverpod
 2.17
 file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_riverpod-2.6.1/
@@ -70,6 +74,10 @@ leak_tracker_testing
 3.2
 file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-3.0.1/
 file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-3.0.1/lib/
+lints
+3.1
+file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0/
+file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0/lib/
 matcher
 3.0
 file:///C:/Users/DELL%205411/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16+1/
